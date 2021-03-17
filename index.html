@@ -28,7 +28,29 @@
 			canvasDimensions.set(canvas);
 			const ctx = canvas.getContext("2d");
 
-			ctx.fillRect(0, 0, canvas.width, canvas.height);
+			const mainLoopVars = {
+				lastUpdate: Date.now(),
+				timeSinceLastFrame: 0
+			};
+			function mainLoop() {
+				const now = Date.now();
+				const dt = now - mainLoopVars.lastUpdate;
+				game.update(dt);
+				mainLoopVars.lastUpdate = now;
+
+				mainLoopVars.timeSinceLastFrame += dt;
+				if (mainLoopVars.timeSinceLastFrame >= 1000 / game.FPS) {
+					game.render();
+					mainLoopVars.timeSinceLastFrame = 0;
+				}
+				window.requestAnimationFrame(mainLoop);
+			}
+			window.addEventListener("load", () => {
+				window.requestAnimationFrame(mainLoop);
+			});
 		</script>
+
+		<!--CORE-->
+		<script src="main.js"></script>
 	</body>
 </html>
