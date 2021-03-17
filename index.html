@@ -20,6 +20,9 @@
 					return c;
 				}
 			};
+			window.addEventListener("resize", () => {
+				canvasDimensions.set(canvas);
+			});
 
 			const canvas = document.getElementById("c");
 			canvasDimensions.set(canvas);
