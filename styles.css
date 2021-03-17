@@ -2,3 +2,16 @@ body {
 	margin: 0;
 	background-color: rgb(52, 52, 52);
 }
+
+canvas {
+	display: block;
+	position: absolute;
+	margin: auto;
+
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	border: 1px solid rgba(255, 255, 255, 0.25);
+}

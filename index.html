@@ -7,5 +7,25 @@
 		<link rel="icon" href="assets/favicon.png" />
 	</head>
 
-	<body></body>
+	<body>
+		<!--CANVAS-->
+		<canvas id="c"></canvas>
+		<script>
+			const canvasDimensions = {
+				wPercentage: 3 / 5,
+				whRatio: 3 / 5,
+				set: function (c) {
+					c.width = window.innerWidth * this.wPercentage;
+					c.height = c.width * this.whRatio;
+					return c;
+				}
+			};
+
+			const canvas = document.getElementById("c");
+			canvasDimensions.set(canvas);
+			const ctx = canvas.getContext("2d");
+
+			ctx.fillRect(0, 0, canvas.width, canvas.height);
+		</script>
+	</body>
 </html>
