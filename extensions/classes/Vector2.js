@@ -4,13 +4,12 @@ class Vector2 {
 	}
 
 	/**
-	 * Sets the vector to x, y
+	 * Sets the vector to x, y | Aliases: s
 	 * @param {number} x - x component
 	 * @param {number} y - y component
 	 * @returns
 	 */
 	set(x, y) {
-		// Aliases: s
 		this.x = x ?? 0;
 		this.y = y ?? 0;
 
@@ -20,7 +19,7 @@ class Vector2 {
 	}
 
 	/**
-	 * Converts vector to String
+	 * Converts vector to String |
 	 * @returns
 	 */
 	toString() {
@@ -28,7 +27,7 @@ class Vector2 {
 	}
 
 	/**
-	 * Adds v to the vector
+	 * Adds v to the vector | Aliases: a
 	 * @param {Vector2} v - other vector
 	 * @returns
 	 */
@@ -38,79 +37,72 @@ class Vector2 {
 		return this;
 	}
 	/**
-	 * Adds x, y to the vector
+	 * Adds x, y to the vector | Aliases: as
 	 * @param {number} x - x component
 	 * @param {number} y - y component
 	 * @returns
 	 */
 	addS(x, y) {
-		// Aliases: as
 		return this.add(new Vector2(x, y));
 	}
 
 	/**
-	 * Subtracts v from the vector
+	 * Subtracts v from the vector | Aliases: sb
 	 * @param {Vector2} v - other vector
 	 * @returns
 	 */
 	sub(v) {
-		// Aliases: sb
 		this.x -= v.x;
 		this.y -= v.y;
 		return this;
 	}
 	/**
-	 * Adds x, y to the vector
+	 * Adds x, y to the vector | Aliases: sbs
 	 * @param {number} x
 	 * @param {number} y
 	 * @returns
 	 */
 	subS(x, y) {
-		//Aliases: sbs
 		return this.sub(new Vector2(x, y));
 	}
 
 	/**
-	 * Multiplies by v
+	 * Multiplies by v | Aliases: m
 	 * @param {Vector2} v - other vector
 	 * @returns
 	 */
 	mult(v) {
-		// Aliases: m
 		this.x *= v.x;
 		this.y *= v.y;
 		return this;
 	}
 	/**
-	 * Multiplies by x, y
+	 * Multiplies by x, y | Aliases: ms
 	 * @param {number} x - x component
 	 * @param {number} y - y component
 	 * @returns
 	 */
 	multS(x, y) {
-		// Aliases: ms
 		return this.mult(new Vector2(x, y));
 	}
 
 	/**
-	 * Divides by v
+	 * Divides by v | Aliases: d
 	 * @param {Vector2} v
 	 * @returns
 	 */
 	div(v) {
-		// Aliases: d
 		this.x /= v.x;
 		this.y /= v.y;
 		return this;
 	}
 	/**
-	 * Divides by x, y
+	 * Divides by x, y | Aliases: ds
 	 * @param {number} x - x component
 	 * @param {number} y - y component
 	 * @returns
 	 */
 	divS(x, y) {
-		// Aliases: ds
 		return this.div(new Vector2(x, y));
 	}
 
@@ -140,33 +132,30 @@ class Vector2 {
 	}
 
 	/**
-	 * Sets the Magnitude of the vector
+	 * Sets the Magnitude of the vector | Aliases: smag
 	 * @param {number} m
 	 * @returns
 	 */
 	setMag(m) {
-		// Aliases: smag
 		if (typeof m != "number") console.error(`arg: isn't a valid argument`);
 
 		return this.div(this.mag()).m(m);
 	}
 
 	/**
-	 * Gets the Angle in Radians of the vector
+	 * Gets the Angle in Radians of the vector | Aliases: ang
 	 * @returns
 	 */
 	angle() {
-		// Aliases: ang
 		return Math.atan2(this.y, this.x);
 	}
 
 	/**
-	 * Sets the Angle of the vector in Radians
+	 * Sets the Angle of the vector in Radians | Aliases: sang
 	 * @param {number} a
 	 * @returns
 	 */
 	setAngle(a) {
-		// Aliases: sang
 		if (typeof a != "number") console.error(`arg: ${a} isn't a valid argument`);
 		const m = this.mag();
 
@@ -179,11 +168,10 @@ class Vector2 {
 	// Cool Functions O:<
 
 	/**
-	 * Returns a Copy of the vector
+	 * Returns a Copy of the vector | Aliases: c
 	 * @returns
 	 */
 	copy() {
-		// Simply Copies, Aliases: c
 		return new Vector2(this.x, this.y);
 	}
 
