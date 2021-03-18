@@ -3,94 +3,159 @@ class Vector2 {
 		this.set(tx, ty);
 	}
 
-	// Operations
-	set(tx, ty) {
-		// Sets the components of the v2, Aliases: s
-		this.x = tx ?? 0;
-		this.y = ty ?? 0;
+	/**
+	 * Sets the vector to x, y | Aliases: s
+	 * @param {number} x - x component
+	 * @param {number} y - y component
+	 * @returns
+	 */
+	set(x, y) {
+		this.x = x ?? 0;
+		this.y = y ?? 0;
 
-		if (typeof this.x != "number") console.error(`arg1: ${tx} isn't a valid argument`);
-		if (typeof this.y != "number") console.error(`arg2: ${ty} isn't a valid argument`);
+		if (typeof this.x != "number") console.error(`arg1: ${x} isn't a valid argument`);
+		if (typeof this.y != "number") console.error(`arg2: ${y} isn't a valid argument`);
 		return this;
 	}
 
+	/**
+	 * Converts vector to String |
+	 * @returns
+	 */
 	toString() {
 		return `v: [x: ${this.x}, y:${this.y}, ||v||: ${this.mag()}, θrad: ${this.angle()}, θ°: ${(180 / Math.PI) * this.angle()}]`;
 	}
 
-	// Arithmetics Operations
+	/**
+	 * Adds v to the vector | Aliases: a
+	 * @param {Vector2} v - other vector
+	 * @returns
+	 */
 	add(v) {
-		// Aliases: a
 		this.x += v.x;
 		this.y += v.y;
 		return this;
 	}
-	addS(s) {
-		// Aliases: as
-		return this.add(new Vector2(s, s));
+	/**
+	 * Adds x, y to the vector | Aliases: as
+	 * @param {number} x - x component
+	 * @param {number} y - y component
+	 * @returns
+	 */
+	addS(x, y) {
+		return this.add(new Vector2(x, y));
 	}
 
+	/**
+	 * Subtracts v from the vector | Aliases: sb
+	 * @param {Vector2} v - other vector
+	 * @returns
+	 */
 	sub(v) {
-		// Aliases: sb
 		this.x -= v.x;
 		this.y -= v.y;
 		return this;
 	}
-	subS(s) {
-		//Aliases: sbs
-		return this.sub(new Vector2(s, s));
+	/**
+	 * Adds x, y to the vector | Aliases: sbs
+	 * @param {number} x
+	 * @param {number} y
+	 * @returns
+	 */
+	subS(x, y) {
+		return this.sub(new Vector2(x, y));
 	}
 
+	/**
+	 * Multiplies by v | Aliases: m
+	 * @param {Vector2} v - other vector
+	 * @returns
+	 */
 	mult(v) {
-		// Aliases: m
 		this.x *= v.x;
 		this.y *= v.y;
 		return this;
 	}
-	multS(s) {
-		// Aliases: ms
-		return this.mult(new Vector2(s, s));
+	/**
+	 * Multiplies by x, y | Aliases: ms
+	 * @param {number} x - x component
+	 * @param {number} y - y component
+	 * @returns
+	 */
+	multS(x, y) {
+		return this.mult(new Vector2(x, y));
 	}
 
+	/**
+	 * Divides by v | Aliases: d
+	 * @param {Vector2} v
+	 * @returns
+	 */
 	div(v) {
-		// Aliases: d
 		this.x /= v.x;
 		this.y /= v.y;
 		return this;
 	}
-	divS(s) {
-		// Aliases: ds
-		return this.div(new Vector2(s, s));
+	/**
+	 * Divides by x, y | Aliases: ds
+	 * @param {number} x - x component
+	 * @param {number} y - y component
+	 * @returns
+	 */
+	divS(x, y) {
+		return this.div(new Vector2(x, y));
 	}
 
-	// Vector Operations
+	/**
+	 * Dot products with v
+	 * @param {*} v - other vector
+	 * @returns
+	 */
 	dot(v) {
 		return this.x * v.x + this.y * v.y;
 	}
 
+	/**
+	 * Gets the Magnitude Squared of the vector
+	 * @returns
+	 */
 	magSq() {
 		return this.x ** 2 + this.y ** 2;
 	}
 
+	/**
+	 * Gets the Magnitude of the vector
+	 * @returns
+	 */
 	mag() {
 		return Math.sqrt(this.magSq());
 	}
 
+	/**
+	 * Sets the Magnitude of the vector | Aliases: smag
+	 * @param {number} m
+	 * @returns
+	 */
 	setMag(m) {
-		// Aliases: smag
 		if (typeof m != "number") console.error(`arg: isn't a valid argument`);
 
 		return this.div(this.mag()).m(m);
 	}
 
-	// Angle Operations
+	/**
+	 * Gets the Angle in Radians of the vector | Aliases: ang
+	 * @returns
+	 */
 	angle() {
-		// Aliases: ang
 		return Math.atan2(this.y, this.x);
 	}
 
+	/**
+	 * Sets the Angle of the vector in Radians | Aliases: sang
+	 * @param {number} a
+	 * @returns
+	 */
 	setAngle(a) {
-		// Aliases: sang
 		if (typeof a != "number") console.error(`arg: ${a} isn't a valid argument`);
 		const m = this.mag();
 
@@ -101,13 +166,20 @@ class Vector2 {
 	}
 
 	// Cool Functions O:<
+
+	/**
+	 * Returns a Copy of the vector | Aliases: c
+	 * @returns
+	 */
 	copy() {
-		// Simply Copies, Aliases: c
 		return new Vector2(this.x, this.y);
 	}
 
+	/**
+	 * Prints the vector with console.log
+	 * @returns
+	 */
 	log() {
-		// just console.log's the vector
 		console.log("%c" + this.toString(), `color:yellow;`);
 		return this;
 	}
