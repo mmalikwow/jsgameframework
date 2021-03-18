@@ -159,8 +159,8 @@ class Vector2 {
 		if (typeof a != "number") console.error(`arg: ${a} isn't a valid argument`);
 		const m = this.mag();
 
-		this.x = cos(a) * m;
-		this.y = sin(a) * m;
+		this.x = Math.cos(a) * m;
+		this.y = Math.sin(a) * m;
 
 		return this;
 	}
