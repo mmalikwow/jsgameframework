@@ -1,5 +1,7 @@
 canvasDimensions, canvas, ctx; // this just prevents intellisense from being stupid (can be removed)
 
+initKeycodes();
+
 // SETTINGS
 const game = {
 	FPS: 60
