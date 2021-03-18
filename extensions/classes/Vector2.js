@@ -25,9 +25,9 @@ class Vector2 {
 		this.y += v.y;
 		return this;
 	}
-	addS(s) {
+	addS(x, y) {
 		// Aliases: as
-		return this.add(new Vector2(s, s));
+		return this.add(new Vector2(x, y));
 	}
 
 	sub(v) {
@@ -36,9 +36,9 @@ class Vector2 {
 		this.y -= v.y;
 		return this;
 	}
-	subS(s) {
+	subS(x, y) {
 		//Aliases: sbs
-		return this.sub(new Vector2(s, s));
+		return this.sub(new Vector2(x, y));
 	}
 
 	mult(v) {
@@ -47,9 +47,9 @@ class Vector2 {
 		this.y *= v.y;
 		return this;
 	}
-	multS(s) {
+	multS(x, y) {
 		// Aliases: ms
-		return this.mult(new Vector2(s, s));
+		return this.mult(new Vector2(x, y));
 	}
 
 	div(v) {
@@ -58,9 +58,9 @@ class Vector2 {
 		this.y /= v.y;
 		return this;
 	}
-	divS(s) {
+	divS(x, y) {
 		// Aliases: ds
-		return this.div(new Vector2(s, s));
+		return this.div(new Vector2(x, y));
 	}
 
 	// Vector Operations
