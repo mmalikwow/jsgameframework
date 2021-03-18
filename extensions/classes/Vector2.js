@@ -4,13 +4,13 @@ class Vector2 {
 	}
 
 	// Operations
-	set(tx, ty) {
-		// Sets the components of the v2, Aliases: s
-		this.x = tx ?? 0;
-		this.y = ty ?? 0;
+	set(x, y) {
+		// Aliases: s
+		this.x = x ?? 0;
+		this.y = y ?? 0;
 
-		if (typeof this.x != "number") console.error(`arg1: ${tx} isn't a valid argument`);
-		if (typeof this.y != "number") console.error(`arg2: ${ty} isn't a valid argument`);
+		if (typeof this.x != "number") console.error(`arg1: ${x} isn't a valid argument`);
+		if (typeof this.y != "number") console.error(`arg2: ${y} isn't a valid argument`);
 		return this;
 	}
 
